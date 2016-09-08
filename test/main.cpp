@@ -1,10 +1,11 @@
-#include "slacking.hpp"
+#include "slacking/slacking.hpp"
 
 #include <fstream>
 
-void more_elaborate_example() {
+void more_elaborate_example()
+{
     auto &slack = slack::instance();
-    slack.chat.channel_username_iconemoji("#mychannel", "Support Bot", ":hamster:");
+    slack.chat.channel_username_iconemoji( "#mychannel", "Support Bot", ":hamster:" );
 
     auto json_attachments = R"([
         {
@@ -18,36 +19,38 @@ void more_elaborate_example() {
         }
     ])"_json;
 
-    slack.chat.attachments = json_attachments; // equivalent to slack::instance().chat_postMessage.attachments = json_attachments.dump();
+    slack.chat.attachments =
+        json_attachments; // equivalent to slack::instance().chat_postMessage.attachments = json_attachments.dump();
     auto result = slack.chat.postMessage();
 
     std::cout << result << std::endl;
 }
 
 
-int main() {
+int main()
+{
 
-    auto& slack = slack::create("xxx-xxx"); // where "xxx-xxx" is your Slack API token
+    auto &slack = slack::create( "xxx-xxx" ); // where "xxx-xxx" is your Slack API token
     slack.chat.channel = "#general";
 
-    slack.chat.postMessage("Hello there!"); // will send the message "Hello there!" in the channel #general
-    
+    slack.chat.postMessage( "Hello there!" ); // will send the message "Hello there!" in the channel #general
+
     {
         // You can also use the generic post slack approach. Parameters (except the token) will not be taken into account.
         // Everything from the Web Slack API is possible here!
-        slack::post (   
-                        "chat.postMessage",
-                        { 
-                            {"text"      , "Slacking is awesome!" }, 
-                            {"channel"   , "#general"             }, 
-                            {"username"  , "peach"                }, 
-                            {"icon_emoji", ":princess:"           } 
-                        }
-                    );
+        slack::post(
+            "chat.postMessage",
+        {
+            {"text"      , "Slacking is awesome!" },
+            {"channel"   , "#general"             },
+            {"username"  , "peach"                },
+            {"icon_emoji", ":princess:"           }
+        }
+        );
     }
 
     {
-        // You can also use the generic post with a a Json approach. 
+        // You can also use the generic post with a a Json approach.
         auto json = R"({
             "text": "Slacking is awesome!",
             "channel" : "#general",
@@ -55,7 +58,7 @@ int main() {
             "icon_emoji": ":princess:"
         })"_json;
 
-        slack::post("chat.postMessage", json);
+        slack::post( "chat.postMessage", json );
     }
 
     {
