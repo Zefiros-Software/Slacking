@@ -1,0 +1,13 @@
+{
+    "name": "Zefiros-Software/Slacking-Dev",
+    "requires": [
+        {
+            "name": "Zefiros-Software/GoogleTest",
+            "version": "@head"
+        },
+        {
+            "name": "Zefiros-Software/Slacking",
+            "version": "@head"
+        }
+    ]
+}

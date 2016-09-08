@@ -1,0 +1,6 @@
+[
+    {
+        "version": "^5.8.1 || @head",
+        "file": ".build.1.lua"
+    }
+]
