@@ -9,4 +9,8 @@ project "Slacking"
 
     zpm.export [[
         includedirs "include/"
+
+        defines {
+            "NOMINMAX"
+        }
     ]]
