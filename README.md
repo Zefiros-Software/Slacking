@@ -1,4 +1,4 @@
-# ChaiScript
+# Slacking
 To use [Slacking](https://github.com/coin-au-carre/slacking) in [ZPM](http://zpm.zefiros.eu), just use:
 
 # Status
