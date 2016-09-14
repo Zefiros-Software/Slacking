@@ -1,7 +1,11 @@
 
 project "Slacking"
 
-    kind "Utility"
+    filter { "action:not xcode4" }
+            kind "Utility"
+
+    filter { "action:xcode4" }
+            kind "StaticLib"
 
     zpm.uses {
         "Zefiros-Software/cURL"
