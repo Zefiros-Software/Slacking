@@ -7,6 +7,8 @@ project "Slacking"
     filter { "action:xcode4" }
             kind "StaticLib"
 
+    filter {}
+
     zpm.uses {
         "Zefiros-Software/cURL"
     }
