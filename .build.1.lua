@@ -1,11 +1,14 @@
 
 project "Slacking"
 
-    kind "Utility"
+    filter "platforms:Windows"
+        kind "Utility"
 
-    if _ACTION == "xcode4" then
-            kind "StaticLib"
-    end
+    filter "platforms:Unix"
+        kind "StaticLib"
+
+    filter "platforms:Mac"
+        kind "StaticLib"
 
     filter {}
 
