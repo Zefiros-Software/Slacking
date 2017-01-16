@@ -1,7 +1,7 @@
 
 project "Slacking"
 
-    kind "Utility"
+    kind "StaticLib"
 
     zpm.uses {
         "Zefiros-Software/cURL"
