@@ -1,0 +1,14 @@
+version: ^5.8.1 || @head
+export: |
+
+    project "Slacking"
+
+        kind "StaticLib"
+
+        zpm.export [[           
+            zpm.uses "Zefiros-Software/cURL"
+
+            includedirs "include"
+            cppdialects "C++11"
+            defines "NOMINMAX"
+        ]]
