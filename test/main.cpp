@@ -32,9 +32,9 @@ int main()
 {
     try
     {
-        auto &slack = slack::create( "xxx-xxx" ); // where "xxx-xxx" is your Slack API token
+        auto &slack = slack::create("xxx-xxx");   // where "xxx-xxx" is your Slack API token
         slack.chat.channel = "#general";
-        slack.chat.postMessage( "Hello there!" ); // will send the message "Hello there!" in the channel #general
+        slack.chat.postMessage("Hello there!");   // will send the message "Hello there!" in the channel #general
 
         {
             // You can also use the generic post slack approach. Parameters (except the token) will not be taken into account.
@@ -42,9 +42,9 @@ int main()
             slack::post(
                 "chat.postMessage",
             {
-                {"text"      , "Slacking is awesome!" },
-                {"channel"   , "#general"             },
-                {"username"  , "peach"                },
+                {"text", "Slacking is awesome!" },
+                {"channel", "#general"             },
+                {"username", "peach"                },
                 {"icon_emoji", ":princess:"           }
             }
             );
@@ -59,12 +59,12 @@ int main()
             "icon_emoji": ":princess:"
         })"_json;
 
-            slack::post( "chat.postMessage", json );
+            slack::post("chat.postMessage", json);
         }
     }
-    catch ( const std::runtime_error &e )
+    catch (const std::runtime_error &e)
     {
-        if ( std::string( e.what() ) != "\"invalid_auth\"" )
+        if (std::string(e.what()) != std::string("curl_easy_perform() failed SSL peer certificate or SSH remote key was not OK"))
         {
             throw e;
         }

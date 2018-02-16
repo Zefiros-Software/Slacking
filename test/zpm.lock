@@ -6,7 +6,7 @@
       "definition": "../",
       "hash": "d6f1465fec96ab2d8bed50c5213069f598004baa",
       "name": "Zefiros-Software/Slacking",
-      "private": {
+      "public": {
         "libraries": [ {
           "definition": "https://github.com/Zefiros-Software/cURL.git",
           "hash": "691902790a5d53a9dadd4b6fb4253618d4fcf5d7",

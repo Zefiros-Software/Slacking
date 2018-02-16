@@ -9,6 +9,6 @@ export: |
             zpm.uses "Zefiros-Software/cURL"
 
             includedirs "include"
-            cppdialects "C++11"
+            cppdialect "C++11"
             defines "NOMINMAX"
         ]]
