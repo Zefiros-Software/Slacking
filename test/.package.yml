@@ -1,7 +1,7 @@
+modules:
+  - name: Zefiros-Software/Defaults
+    version: '@head'
 libraries:
   - name: Zefiros-Software/Slacking
     version: '@head'
     definition: ../
-modules:
-  - name: Zefiros-Software/Defaults
-    version: '@head'

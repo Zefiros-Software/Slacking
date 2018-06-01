@@ -8,16 +8,17 @@ matrix:
   - os: linux
     dist: trusty
     env: VERSION=7
-  - os: linux
-    dist: trusty
-    env: VERSION=5
   - os: osx
-    osx_image: xcode8
+    osx_image: xcode9.2
     language: generic
+global:
+  env:
+  - PROJECT=Slacking
+  - PROJECT_TEMPLATE=default
 install:
-- source /dev/stdin <<< "$(curl -s https://raw.githubusercontent.com/Zefiros-Software/ZPM/features/refactor/script/install-zpm.sh)"
+- source /dev/stdin <<< "$(curl -s https://raw.githubusercontent.com/Zefiros-Software/ZPM/dev/script/install-zpm.sh)"
 script:
 - cd test && zpm run test-definition Slacking
 notifications:
   slack:
-    secure: oTiw0idcacM6kbBEVNCW7weZQCGhHNR+t47sEIuXqGJtX4lhwydhwKymzyyvtkLT25OqCJeM6e0LHoMC4m9WzbturwMRsrlk64C1KUHe3iBHzLg6pjo5XRKJWaKDO9dD91qevqLjMeRXTlzQMuH1EV1s1/gfa9PrpGyaJ2DsgAvj5UqE79DThdYu2snWsHVSLNZjUQ75ooQIq+u1qjivBmKBCQQ43LVyzKBRHF6CCDEJZxCgD0fAvwVi/ZS5XfzoTmt7Qn4kCvG/R3Ych4cFBzHHA09+kA9LaxXwkRC/BRlUBdSZE20aR2/TfyQklDx2VBrjh7iIVXsc5fWYZnVc1TFfvx/4ucR2nXq4iIQ7dyus3DiIzZ3NKX7jQgzQCFCa3E2V18jT1cffGaTZBbVG7dctfyQ8b9pKZW0U4XZvwg/GkLoiODTbW61At/1ay333E/EsF0mykcyvy2RcCrGAbf7554UBPgvWJ7n/uyMIIveecIuDhiXgfYO12vHOacC/BEQldLEbUk7+h5o6GS07p8eJcaXc3WNkVL2zdLKzjwqeqp+yG5lO1wNrTcAGfT4DQVwlIZnsWYcsdNo/BVV4r5S/ktuF0puKP4dGxV/bJ7BEb2lNwoFMEl25obCkK2IFyPn/ZYZtuSMST+Dhx3sOh0blkygs7UBs/j5YC1l/3Qg=
+    secure: O9dqlpGFnpaVmKvdlff3Mabp118FR4cJkCbPXPY6mYff2XrQjsZDAz36OLl68RogfJIAL7rgmh8uFIv+eAQ4FdROKZyx/BEL1XK/CEKOUxTUquSSj+VcmKsXP+DRQ38V4Sl2WGNUlPwjopDIMZYWeobfCmQ2/Tu/3Z340ol+nO4fJOcgB9zzZpPpf7brD3WdFI3XAz3aFXz0OEooFX7YOy4fNYZgUCkwJoH20DWJxEF0TTiYZI0qM+SATxnxCS/HluxsqdamgnqfD605Z5DvLJv1FwjWmtRkCcsPaoNEHTxfgiO5JsbN/qRGD/6/LTlroZ6mZf2bePbQ2o9HAF/Eh3S/VK56UhYyOQghVE+JLiR0dV6HW09ypB6IQGCG8aI99cRNyPLKXlXWQA6RjN8zHR6eR3Zb3+ELuExOypufuHTx09BIvYEykeafOLPwKy57KFfMTxvfBvxXK0ppVyG5RbaXnl8DWW3lgkXbSpBNd4C7iVYrNjtxWFHJbh3XdLaDgnY7xvisnPybIupJeuQwAhYkLdLN7/wAGu9qkbUQWB/Qsn4iu0O9cZMZtHriqzXgkfiCpLnYJR/9HE1Z3JiXk7KJIWvTy3O/q0oS+ENudK1zJu82W2Q5sl79HcWZSn+anBiT8dn5ecy+rt6DcGDKoPWAzybPC3bpzZrtkBzjke8=

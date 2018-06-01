@@ -1,8 +1,0 @@
-{ 
-    "requires": [
-            {
-                "name": "Zefiros-Software/cURL",
-                "version": "^7.50.0"
-            }
-    ]
-}
